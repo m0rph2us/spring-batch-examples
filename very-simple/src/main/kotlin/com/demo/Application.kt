@@ -53,9 +53,8 @@ class SimpleJobConfig(
     fun reader(): ItemReader<Long> = ItemReader {
         numbers.takeIf {
             it.isNotEmpty()
-        }?.removeAt(0)?.let{
+        }?.removeAt(0)?.also {
             println("read: $it")
-            it
         }
     }
 
